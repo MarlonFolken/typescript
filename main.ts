@@ -47,3 +47,31 @@ let backgroundColor = RGBColors.Tomato; //intellisense available
 /* 
 * Type Assertions 
 */
+//No intellisense if using variable of type -any-
+let aMessage;
+aMessage = 'abc';
+//let endsWithC = aMessage.endsWith('c'); <-- sugestion not available right away
+let endsWithC = (<string>aMessage).endsWith('c'); //suggestion available, (<type>myVariable)
+let alternativeWay = (aMessage as string).endsWith('b'); //suggestion available, (myVariable as type)
+
+/*
+* Arrow Functions
+*/
+
+//common function
+let showLog = function(aMessage){
+    console.log(aMessage);
+}
+
+//arrow function
+let showArrowLog = (aMessage) => {
+    console.log(aMessage);
+    console.log(aMessage + '...repeated');
+}
+//single line arrow function a.k.a. lambda expression
+let singleLineArrowLog = (aMessage) => console.log(aMessage);
+let noArgsArrowLog = () => console.log();
+
+/*
+* Interfaces
+*/
