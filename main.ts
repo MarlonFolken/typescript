@@ -75,3 +75,73 @@ let noArgsArrowLog = () => console.log();
 /*
 * Interfaces
 */
+interface Coordinates {
+    x: number,
+    y: number
+}
+
+let aCoordinate = (point: Coordinates) => {
+    // ...
+}
+let getDistance = (pointA: Coordinates, pointB: Coordinates) => {
+    // ...    
+}
+
+
+/*
+* Class
+*/
+class Point {
+    //fields
+    x: number;
+    y: number;
+    //Methods.
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+
+    //A method that gets the distance between this point and another point
+    getDistance(another: Point){
+        //...
+    }
+}
+
+
+/*
+* Objects
+*/
+//Using previous class
+let point = new Point();
+point.x = 1;
+point.y = 2;
+point.draw();
+
+
+/*
+* Constructor
+*/
+class Point2 {
+    x: number;
+    y: number;
+
+    // Using a constructor to initialize with values.
+    // Values are set to optional -x?- to allow calling a Point2 without knowing x,y values
+    constructor (x?: number, y?: number){
+        this.x = x;
+        this.y = y;
+    }
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+}
+
+// If we dont know the values of x and y:
+let point2 = new Point2();
+point2.draw();
+// If we knew the values of x and y:
+// let point2 = new Point2(5, 6);
+
+
+/*
+* Access Modifiers
+*/
