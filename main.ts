@@ -144,4 +144,19 @@ point2.draw();
 
 /*
 * Access Modifiers
+* public, private, protected
 */
+class Point3 {
+    // constructor declares itself variables implicitly
+    // private access modifier will be given to each value
+    constructor (private x?: number, private y?: number){
+        // self assignment not required
+        //this.x = x;
+        //this.y = y;
+    }
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+}
+let point3 = new Point3(5,6);
+point3.draw;
