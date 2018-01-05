@@ -160,3 +160,39 @@ class Point3 {
 }
 let point3 = new Point3(5,6);
 point3.draw;
+
+
+/*
+* Properties
+*/
+class Point4 {
+
+    //Changed to _x and _y to differentiate from methods x() and y()
+    constructor (private _x?: number, private _y?: number){}
+
+    draw() {
+        console.log('X: ' + this._x + ', Y: ' + this._y);
+    }
+
+    //properties with get and set
+    //method in lowercase
+    get x(){
+        return this._x;
+    }
+    set x(value){
+        if (value < 0)
+            throw new Error('Value can not be zero');
+        this._x = value;
+    }
+}
+let point4 = new Point4(5,6);
+//Using a get property
+//let x4 = point4.getX();
+let x4 = point4.x;
+
+//Using a set property
+//point4.setX(5.5);
+point4.x = 5.5;
+
+point4.draw;
+
