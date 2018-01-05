@@ -196,3 +196,13 @@ point4.x = 5.5;
 
 point4.draw;
 
+
+/*
+* Modules
+* Using other files to import or export behaviour
+* Relative route used. ./ targets the same folder
+*/
+import { Point5 } from './point5';
+//import { Point5, Route, Space } ... //if several imports required
+let point5 = new Point5(20, 23);
+point5.draw();
